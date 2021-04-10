@@ -1,0 +1,39 @@
+<form>
+  <br/>
+  <em>Question 1</em>
+</form>
+<span ngClass="grid-cols-3">
+  <div><input type="number" (keyup)="numValue($event)" [value]="num" /></div>
+  <div>
+    <select [value]="select" (change)="selectChange($event)">
+      <option *ngFor="let item of list" [value]="item">{{item}}</option>
+    </select>
+  </div>
+  <div>{{isPrimeOrFibonacci(num, select)}}</div>
+</span>
+
+<form>
+  <br/>
+  <em>Question 2</em>
+  <p>Search: <input type="text" (keyup)="search($event)" /></p>
+</form>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Category</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let category of categories | filter: filterTerm; index as i">
+    <td>{{1 + i}}</td>
+    <td>{{category}}</td>
+  </tr>
+  </tbody>
+</table>
+
+<form>
+  <br/>
+  <em>Question 3</em>
+  <p>see file `quiz3.js` in demoTest project</p>
+</form>

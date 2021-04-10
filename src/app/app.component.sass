@@ -1,0 +1,15 @@
+.grid-cols-3
+  display: inline-flex
+  height: 100vh
+  & > div
+    width: 100%
+    border: 1px solid black
+    & > input, select
+      width: 80%
+  & > div:first-child
+    width: 200px
+  & > div:last-child
+    width: 300px
+    @media only screen and (max-width: 600px)
+      width: 100px
+
